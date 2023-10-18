@@ -1,0 +1,73 @@
+/* vim: set filetype=md : */
+/**
+
+\mainpage RemroVision
+
+This project provides an image processing environment for university project RemoteRobotics.
+
+# 1. Usage
+
+## remro_cam
+
+Reads camera image and publishes image data.
+    
+    rosrun remro_vision remro_cam (<int video source>)
+
+The video source parameter is optional. In case you ignore it 
+the program trys '0' as the image source.
+
+## img_view
+
+Displays video transferred as `sensor_msgs::ConstImgPtr`.
+
+    rosrun remro_vision img_view <char* subscriber topic>
+
+## crop_node
+
+Receives and sends image data.
+
+    rosrun remro_vision crop_node <char* subscriber topic> <char* publisher topic>
+
+## crop_dims_test
+
+Publishes motor index obtained from user input.
+
+    rosrun remro_vision crop_dims_test
+
+## binary_converter
+
+Converts image to binary image and publishes said image.
+
+    rosrun remro_vision binary_converter <char* subscriber topic>
+
+## angle_detector
+
+Retrieves angle from **binary image**, prints that value and publishes it.
+
+    rosrun remro_vision angle_detector 
+
+
+
+
+
+# 2. Launching two nodes of the same type
+
+Trying to have two crop_nodes active at the same time (to monitor two servos at the same time) will result into an error message and the termiation of one of the launched nodes.
+To launch the same node two times one has to change the node name when executing the node. In the aforementioned case:
+
+    rosrun crop_node image/from_cam image/motor0 
+    rosrun crop_node image/from_cam image/motor1 __name:=crop2
+
+Changing the topic names of a node requires an argument with the pattern `<topic_name>:=<new_topic_name>`.
+Changing the publisher topic of the binary_converter node would look like this:
+
+    rosrun remro_vision binary_converter image/from_cam image/binary:=image/binary2
+
+# 3. Communication between two machines
+
+To setup a ROS-communication between two machines, u need to know both 
+IP addresses and set the Shell variables `ROS_MASTER_URI` and `ROS_IP`
+to match the corresponding addresses.
+
+A verbose description of this process can be found at http://wiki.ros.org/ROS/Tutorials/MultipleMachines
+**/

@@ -1,0 +1,5 @@
+<map id="BinaryImg" name="BinaryImg">
+<area shape="rect" id="node2" href="$classManip.html" title="Fully implements callback function. " alt="" coords="33,155,91,181"/>
+<area shape="rect" id="node3" href="$classManipPrototype.html" title="Test class with no real callback and manipulate implementation. " alt="" coords="5,80,119,107"/>
+<area shape="rect" id="node4" href="$classIManip.html" title="Interface for number of image manipulation classes. " alt="" coords="31,5,93,32"/>
+</map>

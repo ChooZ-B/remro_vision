@@ -1,0 +1,25 @@
+actions: []
+authors: ''
+brief: ''
+bugtracker: ''
+depends:
+- catkin
+- roscpp
+- std_msgs
+- message_runtime
+- sensor_msgs
+- image_transport
+- OpenCV
+- message_generation
+- cv_bridge
+description: The remro_vision package
+license: TODO
+maintainers: cb <cb@todo.todo>
+msgs:
+- RotorAngle
+package_type: package
+repo_url: ''
+srvs:
+- rect_dims
+- motor_idx
+url: ''

@@ -1,0 +1,6 @@
+<map id="ImgSegmentSimple" name="ImgSegmentSimple">
+<area shape="rect" id="node5" href="$classImgSegmentSpecial.html" title="Crops received image according to motor index from topic rectangle/index. " alt="" coords="5,304,144,331"/>
+<area shape="rect" id="node2" href="$classManip.html" title="Fully implements callback function. " alt="" coords="46,155,103,181"/>
+<area shape="rect" id="node3" href="$classManipPrototype.html" title="Test class with no real callback and manipulate implementation. " alt="" coords="18,80,131,107"/>
+<area shape="rect" id="node4" href="$classIManip.html" title="Interface for number of image manipulation classes. " alt="" coords="44,5,105,32"/>
+</map>
