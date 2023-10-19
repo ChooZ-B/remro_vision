@@ -31,7 +31,7 @@ class AngleDetector{
         bool isBinary(cv::Mat& m);
 
     public:
-        AngleDetector();
+        AngleDetector(const char* s_topic, int sq_size, const char* p_topic, int pq_size);
         void callback(const sensor_msgs::ImageConstPtr& msg);
 
         /**
@@ -56,15 +56,21 @@ int main(int argc, char** argv)
 {
     ros::init(argc,argv,"angle_detection");
 
-    AngleDetector a;
+    if(argc < 3)
+    {
+        ROS_INFO("usage: process <subscriber_topic const char*> <publisher_topic const char*>");
+        return 1;
+    }
+ 
+    AngleDetector a(argv[1],5,argv[2],1);
     ros::spin();
     return 0;
 }
 
-AngleDetector::AngleDetector() : it_(nh_)
+AngleDetector::AngleDetector(const char* s_topic, int sq_size, const char* p_topic, int pq_size) : it_(nh_)
 {
-    sub_ = it_.subscribe("image/binary",5,&AngleDetector::callback, this);
-    pub_ = nh_.advertise<remro_vision::RotorAngle>("motor/angle",1);
+    sub_ = it_.subscribe(s_topic,sq_size,&AngleDetector::callback, this);
+    pub_ = nh_.advertise<remro_vision::RotorAngle>(p_topic,pq_size);
 }
 
 void AngleDetector::callback(const sensor_msgs::ImageConstPtr& msg)
@@ -79,6 +85,7 @@ void AngleDetector::callback(const sensor_msgs::ImageConstPtr& msg)
     catch(cv_bridge::Exception& e)
     {
         ROS_ERROR("cv_bridge exception: %s\n",e.what());
+        return;
     }
 
     try
@@ -109,7 +116,7 @@ float AngleDetector::get_angle(cv::Mat& bin)
     double theta = atan2(b, a-c)/2.0;
     
     // return minus theta since the algorithm is counting
-    // the angle from -180° instead of 0
+    // the angle clockwise
     return static_cast<float>(-theta*180/PI);
 }
 

@@ -2,7 +2,7 @@
  *
  * \file img_manip.hpp
  *
- * \author Niels Töpler
+ * \author Niels Toepler
  *
  * \date 03.10.2023
  *
@@ -170,6 +170,5 @@ class BinaryImg : Manip{
     public:
         BinaryImg(const char* s_topic, int sq_size, int pq_size);
 };
-
 
 #endif
