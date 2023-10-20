@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 
     if(argc < 3)
     {
-        ROS_INFO("usage: process <subscriber_topic const char*> <publisher_topic> const char*>\n");
+        ROS_INFO("usage: process <subscriber_topic const char*> <publisher_topic const char*>\n");
         return 1;
     }
     
