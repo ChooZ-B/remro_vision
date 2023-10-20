@@ -60,7 +60,7 @@ To launch the same node two times one has to change the node name when executing
 Changing the topic names of a node requires an argument with the pattern `<topic_name>:=<new_topic_name>`.
 Changing the publisher topic of the binary_converter node would look like this:
 
-    rosrun remro_vision binary_converter image/from_cam image/binary:=image/binary2
+    rosrun remro_vision binary_converter image/binary:=image/binary2
 
 Instead of trying to find the default topic names in the source code, one should try
 `rostopic list` or use the graphical interface `rqt`.

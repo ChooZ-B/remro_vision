@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="node1" href="$classIManip.html" title="Interface for number of image manipulation classes. " alt="" coords="5,31,67,57"/>
-<area shape="rect" id="node2" href="$classManipPrototype.html" title="Test class with no real callback and manipulate implementation. " alt="" coords="115,31,228,57"/>
+<area shape="rect" id="node2" href="$classManipPrototype.html" title="Test class with callback and manipulate implementation to test general architecture. " alt="" coords="115,31,228,57"/>
 <area shape="rect" id="node3" href="$classManip.html" title="Fully implements callback function. " alt="" coords="276,31,333,57"/>
 <area shape="rect" id="node4" href="$classBinaryImg.html" title="Converts received image to binary image. " alt="" coords="409,5,490,32"/>
 <area shape="rect" id="node5" href="$classImgSegmentSimple.html" title="Crops received image according to coordinates from topic rectangle/dimensions. " alt="" coords="381,56,517,83"/>

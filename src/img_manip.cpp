@@ -180,8 +180,8 @@ bool ImgSegmentSpecial::set_dim_by_index(remro_vision::motor_idx::Request& req, 
  * BinaryImg member function definitions
  *
  */
-BinaryImg::BinaryImg(const char* s_topic, int sq_size, int pq_size)
-    : Manip(s_topic,sq_size,"image/binary",pq_size){};
+BinaryImg::BinaryImg(const char* s_topic, int sq_size, const char* p_topic, int pq_size)
+    : Manip(s_topic,sq_size,p_topic,pq_size){};
 
 void BinaryImg::manipulate(cv::Mat& image){
     

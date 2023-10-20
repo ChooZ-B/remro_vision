@@ -4,7 +4,7 @@
  *
  * \author Niels Toepler
  *
- * \date 03.10.2023
+ * \date 20.10.2023
  *
  * Contains declaration for classes IManip, ManipPrototype, Manip,
  * ImgSegmentSimple, ImgSegmentSpecial, BinaryImg.
@@ -26,7 +26,7 @@
  *
  * \brief Interface for number of image manipulation classes
  *
- * All derived classes make use of at least one callback function which receives an <b>image msg</b>
+ * All derived classes make use of at least one callback function which receives an *image msg*
  * and publishes an image from within that callback function.
  */
 class IManip{
@@ -34,6 +34,8 @@ class IManip{
     protected:
         /**
          * \brief manipulate image container
+         *
+         * This function is to be used from within the callback to manipulate the received image msg.
          *
          * \param image the image container to manipulate
          *
@@ -55,7 +57,7 @@ class IManip{
 /**
  * \class ManipPrototype
  *
- * \brief Test class with no real callback and manipulate implementation.
+ * \brief Test class with callback and manipulate implementation to test general architecture.
  *
  */
 class ManipPrototype : public IManip{
@@ -168,7 +170,7 @@ class BinaryImg : Manip{
         void manipulate(cv::Mat& Image);
         
     public:
-        BinaryImg(const char* s_topic, int sq_size, int pq_size);
+        BinaryImg(const char* s_topic, int sq_size, const char* p_topic, int pq_size);
 };
 
 #endif
